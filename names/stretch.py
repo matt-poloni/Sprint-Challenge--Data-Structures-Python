@@ -45,23 +45,23 @@ with open('names_2.txt', 'r') as f:
 
 duplicates = []
 for name_1 in names_1:
-    if name_1 in names_2:
-        duplicates.append(name_1)
-    # ^ ran in 1.8 seconds
+    # if name_1 in names_2:
+    #     duplicates.append(name_1)
+    # ^ ran in 1.8 seconds (compared to original 11.2)
 
-    # if name_1[0] < 'N':
-    #     for name_2 in names_2:
-    #         if name_1 < name_2:
-    #             break
-    #         elif name_1 == name_2:
-    #             duplicates.append(name_1)
-    # else:
-    #     for name_2 in reversed(names_2):
-    #         if name_1 > name_2:
-    #             break
-    #         elif name_1 == name_2:
-    #             duplicates.append(name_1)
-    # ^ ran in 5.1 seconds
+    if name_1[0] < 'N':
+        for name_2 in names_2:
+            if name_1 < name_2:
+                break
+            elif name_1 == name_2:
+                duplicates.append(name_1)
+    else:
+        for name_2 in reversed(names_2):
+            if name_1 > name_2:
+                break
+            elif name_1 == name_2:
+                duplicates.append(name_1)
+    # ^ ran in 5.1 seconds (compared to original 11.2)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")

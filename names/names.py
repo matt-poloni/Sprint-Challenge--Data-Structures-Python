@@ -20,7 +20,8 @@ for name_2 in names_2:
     if bst.contains(name_2):
         duplicates.append(name_2)
 
-end_time = time.time() # First run in 0.1 seconds
+end_time = time.time()
+# First run in 0.1 seconds (compared to original 11.2)
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
 
