@@ -82,6 +82,8 @@ for name_1 in names_1:                # O(n) by itself
 
 Six seconds is an eternity so you've been tasked with speeding up the code. Can you get the runtime to under a second? Under one hundredth of a second?
 
+> Original runtime for me was 11.2 seconds
+
 *You may not use the built in Python list, set, or dictionary for this problem*
 
 (Hint: You might try importing a data structure you built during the week)
