@@ -8,4 +8,4 @@ class RingBuffer:
     pass
 
   def get(self):
-    pass
+    return [i for i in self.storage if i is not None]
