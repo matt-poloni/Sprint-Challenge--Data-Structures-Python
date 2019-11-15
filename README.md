@@ -78,7 +78,7 @@ for name_1 in names_1:                # O(n) by itself
             duplicates.append(name_1) # O(1)
 ```
 
-- The nested `for` loops multiply against each other, making the complexity for arbitrary input `O(n*m)`, but since we know that the two files are equal length, **then their complexity is `O(n**2)`.** Technically, you could call it `O(n**2 + 2n)`, but `n**2` dominates.
+> The nested `for` loops multiply against each other, making the complexity for arbitrary input `O(n*m)`, but since we know that the two files are equal length, **then their complexity is `O(n**2)`.** Technically, you could call it `O(n**2 + 2n)`, but `n**2` dominates.
 
 Six seconds is an eternity so you've been tasked with speeding up the code. Can you get the runtime to under a second? Under one hundredth of a second?
 
