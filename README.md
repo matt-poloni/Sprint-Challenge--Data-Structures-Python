@@ -62,7 +62,27 @@ buffer.get()   # should return ['d', 'e', 'f']
 
 Navigate into the `names` directory. Here you will find two text files containing 10,000 names each, along with a program `names.py` that compares the two files and prints out duplicate name entries. Try running the code with `python3 names.py`. Be patient because it might take a while: approximately six seconds on my laptop. What is the runtime complexity of this code?
 
+```py
+f = open('names_1.txt', 'r')
+names_1 = f.read().split("\n")        # O(n)
+f.close()
+
+f = open('names_2.txt', 'r')
+names_2 = f.read().split("\n")        # O(n)
+f.close()
+
+duplicates = []
+for name_1 in names_1:                # O(n) by itself
+    for name_2 in names_2:            # O(n) by itself
+        if name_1 == name_2:          # O(1)
+            duplicates.append(name_1) # O(1)
+```
+
+> The nested `for` loops multiply against each other, making the complexity for arbitrary input `O(n*m)`, but since we know that the two files are equal length, **then their complexity is `O(n**2)`.** Technically, you could call it `O(n**2 + 2n)`, but `n**2` dominates.
+
 Six seconds is an eternity so you've been tasked with speeding up the code. Can you get the runtime to under a second? Under one hundredth of a second?
+
+> Original runtime for me was 11.2 seconds
 
 *You may not use the built in Python list, set, or dictionary for this problem*
 
@@ -86,7 +106,7 @@ While credit will be given for a functional solution, only optimal solutions wil
 
 #### Stretch 
 
-* Say your code from `names.py` is to run on an embedded computer with very limited RAM. Because of this, memory is extremely constrained and you are only allowed to store names in arrays (i.e. Python lists). How would you go about optimizing the code under these conditions? Try it out and compare your solution to the original runtime. (If this solution is less efficient than your original solution, include both and label the strech solution with a comment)
+* Say your code from `names.py` is to run on an embedded computer with very limited RAM. Because of this, memory is extremely constrained and you are only allowed to store names in arrays (i.e. Python lists). How would you go about optimizing the code under these conditions? Try it out and compare your solution to the original runtime. (If this solution is less efficient than your original solution, include both and label the stretch solution with a comment)
 
 
 ### Rubric
